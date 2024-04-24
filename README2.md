@@ -1,8 +1,12 @@
 # 482 React17+React Hook+TS4 最佳实践仿 Jira 企业级项目
 
+## 用 Create React  App 初始化项目
+
 npx create-react-app wsjls-jira --template typescript
 cd wsjls-jira
 npm start
+
+## 配置 eslint、 prettier 和 commitlint 规范工程
 
 [](https://prettier.io/docs/en/install.html)
 yarn add --dev --exact prettier
@@ -77,3 +81,16 @@ test
 
 标准格式
 git commit -m "ci: 内容"
+[如何使用Commitlint](https://blog.csdn.net/weixin_61434483/article/details/131542611)
+[新版husky配合commitlint，规范我们的git的提交记录--Nodejs项目超详细教程](https://www.jianshu.com/p/4c82761c0a68)
+
+## 对比常见 Mock  方案 配置 JSON SERVER
+
+全局安装json server
+npm i json-server -g (node 18.3.0)
+npm i json-server --location=global
+
+### --watch/-w can be omitted, JSON Server 1+ watches for file changes by default
+
+[json-server --watch. db.json](https://blog.csdn.net/Raid02/article/details/120874070)
+json-server db.json -p 2000
