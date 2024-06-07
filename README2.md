@@ -93,4 +93,7 @@ npm i json-server --location=global
 ### --watch/-w can be omitted, JSON Server 1+ watches for file changes by default
 
 [json-server --watch. db.json](https://blog.csdn.net/Raid02/article/details/120874070)
-json-server db.json -p 2000
+json-server ./__json_server_mock__/db.json -p 2000
+
+v20.12.2 18.3.0
+nvm use 20.12.2
