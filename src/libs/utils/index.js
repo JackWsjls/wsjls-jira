@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 export const isFalse = (value) => {
   if (value === 0) {
     return false;
@@ -14,4 +16,23 @@ export const clearObject = (object) => {
     }
   });
   return result;
+};
+
+export const useMount = (callback) => {
+  useEffect(() => {
+    callback();
+  }, []);
+};
+
+export const useDebounce = (value, delay) => {
+  const [debounceValue, setDebounceValue] = useState("");
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebounceValue(value);
+    }, delay);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [value, delay]);
+  return debounceValue;
 };
