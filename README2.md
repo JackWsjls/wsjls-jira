@@ -95,5 +95,21 @@ npm i json-server --location=global
 [json-server --watch. db.json](https://blog.csdn.net/Raid02/article/details/120874070)
 json-server ./__json_server_mock__/db.json -p 2000
 
+## Node 版本
+
+```bash
 v20.12.2 18.3.0
 nvm use 20.12.2
+```
+
+## Question
+
+### Adding a middleware from CLI does not work[https://github.com/typicode/json-server/issues/1481]
+
+the versions I used were:
+"json-server": "^0.17.4",
+"json-server-auth": "^2.1.0",
+
+cause the version 1.0^ of json-server doesn't have middleware implementations.
+
+## 告别后端依赖：用 MSW 实现独立的前端应用 Mock[https://blog.csdn.net/lecepin/article/details/136112705]

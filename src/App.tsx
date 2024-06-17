@@ -1,12 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
-import { ProjectListScreen } from "./screens/project-list/index";
+// import { ProjectListScreen } from "./screens/project-list/index";
+import { LoginScreen } from "screens/login";
 
 function App() {
   return (
     <div className="App">
-      <ProjectListScreen></ProjectListScreen>
+      <LoginScreen></LoginScreen>
+      {/* <ProjectListScreen></ProjectListScreen> */}
+
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
