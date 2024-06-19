@@ -3,16 +3,35 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { DevTools, loadServer } from "jira-dev-tool";
+// 务必在jira-dev-tool后面引入
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
 
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-);
+loadServer(() => {
+  root.render(
+    <React.StrictMode>
+      <DevTools />
+      <App />
+    </React.StrictMode>,
+  );
+});
+
+// loadServer(() =>
+//   ReactDOM.render(
+//     <React.StrictMode>
+//       <Profiler id={"Root App"} phases={["mount"]}>
+//         <AppProviders>
+//           <DevTools />
+//           <App />
+//         </AppProviders>
+//       </Profiler>
+//     </React.StrictMode>,
+//     document.getElementById("root")
+//   )
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

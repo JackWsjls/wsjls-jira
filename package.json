@@ -18,6 +18,9 @@
     "@types/node": "^16.18.86",
     "@types/react": "^18.2.63",
     "@types/react-dom": "^18.2.20",
+    "antd": "^5.18.2",
+    "jira-dev-tool": "^2.0.7",
+    "msw": "^0.28.1",
     "qs": "^6.12.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -56,5 +59,8 @@
   },
   "lint-staged": {
     "*.{js,css,md,ts,tsx}": "prettier --write"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
