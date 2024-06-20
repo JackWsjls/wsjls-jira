@@ -117,3 +117,9 @@ cause the version 1.0^ of json-server doesn't have middleware implementations.
 ## git报错 SyntaxError: Unexpected token ‘??=‘ at Loader.moduleStrategy (internal/modules/esm/transla[https://blog.csdn.net/m0_56675639/article/details/138252775]
 
 当我们在git commit时报错 SyntaxError: Unexpected token '??='     at Loader.moduleStrategy (internal/modules/esm/translators. 这个时，多半是由于node版本问题引起的，我们只需要将node版本升到16以上就可以解决。
+
+```js
+{"user":{"id":193421364,"name":"rwt","token":"MTkzNDIxMzY0"}}
+```
+
+<!-- firebase -->
