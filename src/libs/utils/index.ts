@@ -35,6 +35,6 @@ export const useDebounce = <T>(value: T, delay?: number) => {
     return () => {
       clearInterval(timer);
     };
-  }, [value, delay]);
+  }, []);
   return debounceValue;
 };

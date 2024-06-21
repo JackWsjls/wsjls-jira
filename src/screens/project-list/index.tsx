@@ -2,11 +2,12 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { List } from "./list";
 import { SearchPanel } from "./search-panel";
-import { clearObject, useDebounce, useMount } from "libs/utils";
-import * as qs from "qs";
+import {
+  clearObject,
+  useDebounce,
+  // useMount
+} from "libs/utils";
 import { useHttp } from "utils/http";
-
-const apiUrl = process.env.REACT_APP_API_URL;
 
 export const ProjectListScreen = () => {
   const [param, setParam] = useState({
@@ -20,10 +21,11 @@ export const ProjectListScreen = () => {
 
   useEffect(() => {
     client("projects", { data: clearObject(debounceParam) }).then(setList);
-  }, [debounceParam]);
-  useMount(() => {
     client("users").then(setUsers);
-  });
+  }, []); // eslint-disable-line
+  // useMount(() => {
+  //   client("users").then(setUsers);
+  // });
   return (
     <div>
       <SearchPanel users={users} param={param} setParam={setParam} />

@@ -166,3 +166,7 @@ type Partial<T> = {
     [P in keyof T]?: T[P];
 };
 ```
+
+### craco
+
+Create React App Configuration Override, an easy and comprehensible configuration layer for create-react-app.
