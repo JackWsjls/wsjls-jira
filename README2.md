@@ -1,5 +1,7 @@
 # 482 React17+React Hook+TS4 最佳实践仿 Jira 企业级项目
 
+[https://github.com/sindu12jun/imooc-jira]
+
 ## 用 Create React  App 初始化项目
 
 npx create-react-app wsjls-jira --template typescript
@@ -123,3 +125,44 @@ cause the version 1.0^ of json-server doesn't have middleware implementations.
 ```
 
 <!-- firebase -->
+
+### http.ts 操作符 Utility Types
+
+```ts
+// 类型别名 在一些情况下可以和interface互换
+interface Person {name: string}
+type Person = {name: string}
+const person: Person = {name: 'jack'}
+
+// interface 在这种情况下不能替代type
+type name = string | number
+let myName: name = 8
+
+// interface 不能实现 Utility Types
+
+export const useHttp = () => {
+  const { user } = useAuth();
+  // Utility Types 用泛型传入一个其他类型，Utility Types 对这个类型进行某种操作
+  return (...[endpoint, config]: Parameters<typeof http>) =>
+    http(endpoint, { ...config, token: user?.token });
+};
+// typeof ts中的typeof是在静态环境运行的，打包之后看不到；typeof http 指的是一个函数类型
+// JS是在runtime时运行的
+type Person = {
+  name: string,
+  age: number
+}
+const test: Person = {name: 'ts'} // 报错 必须有 name和age
+const test: Partial<Person> = {name: 'ts'} // Partial 可以都不传
+const test: Omit<Person, 'name' | 'age'> = {age: 8} // Omit 除了name，其他必传
+
+type PersonKeys = keyof Person // 取出 name age
+type PersonOnlyName = Pick<Person, 'name'> // 从大的对象中，只取name
+type Age = Exclude<PersonKeys, 'name'> // 操作联合类型
+/**
+ * Make all properties in T optional
+ */
+type Partial<T> = {
+    [P in keyof T]?: T[P];
+};
+```
