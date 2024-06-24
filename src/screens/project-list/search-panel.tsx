@@ -30,10 +30,10 @@ export const SearchPanel = ({ users, param, setParam }: SearchPanelProps) => {
           placeholder={"项目名"}
           type="text"
           value={param.name}
-          onChange={(event) =>
+          onChange={(evt) =>
             setParam({
               ...param,
-              name: event.target.value,
+              name: evt.target.value,
             })
           }
         />

@@ -36,6 +36,6 @@ export const useDebounce = <T>(value: T, delay?: number) => {
     return () => {
       clearInterval(timer);
     };
-  }, []); // eslint-disable-line
+  }, [value, delay]); // eslint-disable-line
   return debounceValue;
 };

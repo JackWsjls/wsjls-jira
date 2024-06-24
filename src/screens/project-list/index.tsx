@@ -2,11 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { List } from "./list";
 import { SearchPanel } from "./search-panel";
-import {
-  clearObject,
-  useDebounce,
-  // useMount
-} from "libs/utils";
+import { clearObject, useDebounce, useMount } from "libs/utils";
 import { useHttp } from "utils/http";
 import styled from "@emotion/styled";
 
@@ -22,11 +18,10 @@ export const ProjectListScreen = () => {
 
   useEffect(() => {
     client("projects", { data: clearObject(debounceParam) }).then(setList);
-    client("users").then(setUsers);
   }, [debounceParam]); // eslint-disable-line
-  // useMount(() => {
-  //   client("users").then(setUsers);
-  // });
+  useMount(() => {
+    client("users").then(setUsers);
+  });
   return (
     <Container>
       <h1>项目列表</h1>

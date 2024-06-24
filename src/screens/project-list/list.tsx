@@ -23,18 +23,15 @@ export const List = ({ list = [], users = [] }: ListProps) => {
       pagination={false}
       columns={[
         {
-          key: "1",
           title: "名称",
           dataIndex: "name",
           sorter: (a, b) => a.name.localeCompare(b.name),
         },
         {
-          key: "2",
           title: "部门",
           dataIndex: "organization",
         },
         {
-          key: "3",
           title: "负责人",
           render(value, project) {
             return (
@@ -46,7 +43,6 @@ export const List = ({ list = [], users = [] }: ListProps) => {
           },
         },
         {
-          key: "4",
           title: "创建时间",
           render(value, project) {
             return (
