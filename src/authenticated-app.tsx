@@ -3,6 +3,8 @@ import { Row } from "components/lib";
 import { useAuth } from "context/auth-context";
 import React from "react";
 import { ProjectListScreen } from "screens/project-list";
+import { ReactComponent as SoftwareLogo } from "assets/software-logo.svg";
+import { Dropdown, Menu, MenuProps, Space } from "antd";
 
 export const AuthenticatedApp = () => {
   return (
@@ -16,16 +18,26 @@ export const AuthenticatedApp = () => {
 };
 
 const PageHeader = () => {
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
+  const items: MenuProps["items"] = [
+    {
+      key: "1",
+      label: <a onClick={logout}>登出</a>,
+    },
+  ];
   return (
     <Header between={true}>
       <HeaderLeft gap={true}>
-        <h2>logo</h2>
+        <SoftwareLogo width={"18rem"} color={"rgb(38, 132, 255)"} />
         <h2>项目</h2>
         <h2>用户</h2>
       </HeaderLeft>
       <HeaderRight>
-        <button onClick={logout}>logout</button>
+        <Dropdown menu={{ items }}>
+          <a onClick={(e) => e.preventDefault()}>
+            <Space>Hi, {user?.name}</Space>
+          </a>
+        </Dropdown>
       </HeaderRight>
     </Header>
   );
@@ -51,6 +63,6 @@ const HeaderLeft = styled(Row)``;
 const HeaderRight = styled.div``;
 
 const Main = styled.main`
-  display: flex;
-  overflow: hidden;
+  /* display: flex;
+  overflow: hidden; */
 `;
