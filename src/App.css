@@ -1,4 +1,12 @@
-.App {
+html {
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+html body #root .app {
+  min-height: 100vh;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +43,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

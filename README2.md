@@ -170,3 +170,7 @@ type Partial<T> = {
 ### craco
 
 Create React App Configuration Override, an easy and comprehensible configuration layer for create-react-app.
+
+### next
+
+yarn add @emotion/react @emotion/styled
