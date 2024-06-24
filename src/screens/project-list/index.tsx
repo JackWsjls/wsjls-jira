@@ -23,7 +23,7 @@ export const ProjectListScreen = () => {
   useEffect(() => {
     client("projects", { data: clearObject(debounceParam) }).then(setList);
     client("users").then(setUsers);
-  }, []); // eslint-disable-line
+  }, [debounceParam]); // eslint-disable-line
   // useMount(() => {
   //   client("users").then(setUsers);
   // });

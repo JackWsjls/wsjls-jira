@@ -8,12 +8,13 @@ export const isFalse = (value: unknown) => {
   }
 };
 
-export const clearObject = (object: object) => {
+const isVoid = (value: unknown) =>
+  value === undefined || value === null || value === "";
+
+export const clearObject = (object: { [key: string]: unknown }) => {
   const result = { ...object };
   Object.keys(result).forEach((key: string) => {
-    // @ts-ignore
-    if (isFalse(result[key])) {
-      // @ts-ignore
+    if (isVoid(result[key])) {
       delete result[key];
     }
   });
@@ -23,7 +24,7 @@ export const clearObject = (object: object) => {
 export const useMount = (callback: () => void) => {
   useEffect(() => {
     callback();
-  }, []);
+  }, []); // eslint-disable-line
 };
 
 export const useDebounce = <T>(value: T, delay?: number) => {
@@ -35,6 +36,6 @@ export const useDebounce = <T>(value: T, delay?: number) => {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, []); // eslint-disable-line
   return debounceValue;
 };

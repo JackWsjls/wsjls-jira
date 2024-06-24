@@ -4,7 +4,7 @@ import { useAuth } from "context/auth-context";
 import React from "react";
 import { ProjectListScreen } from "screens/project-list";
 import { ReactComponent as SoftwareLogo } from "assets/software-logo.svg";
-import { Dropdown, Menu, MenuProps, Space } from "antd";
+import { Button, Dropdown, MenuProps, Space } from "antd";
 
 export const AuthenticatedApp = () => {
   return (
@@ -22,7 +22,11 @@ const PageHeader = () => {
   const items: MenuProps["items"] = [
     {
       key: "1",
-      label: <a onClick={logout}>登出</a>,
+      label: (
+        <Button type={"link"} onClick={logout}>
+          登出
+        </Button>
+      ),
     },
   ];
   return (
@@ -34,18 +38,14 @@ const PageHeader = () => {
       </HeaderLeft>
       <HeaderRight>
         <Dropdown menu={{ items }}>
-          <a onClick={(e) => e.preventDefault()}>
+          <Button type={"link"}>
             <Space>Hi, {user?.name}</Space>
-          </a>
+          </Button>
         </Dropdown>
       </HeaderRight>
     </Header>
   );
 };
-
-const HeaderItem = styled.h3`
-  margin-right: 3rem;
-`;
 
 const Container = styled.div`
   display: grid;

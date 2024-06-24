@@ -4956,9 +4956,9 @@ es-iterator-helpers@^1.0.19:
     safe-array-concat "^1.1.2"
 
 es-module-lexer@^1.2.1:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/es-module-lexer/-/es-module-lexer-1.5.3.tgz#25969419de9c0b1fbe54279789023e8a9a788412"
-  integrity sha512-i1gCgmR9dCl6Vil6UKPI/trA69s08g/syhiDK9TG0Nf1RJjjFI+AzoWW7sPufzkgYAn861skuCwJa0pIIHYxvg==
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/es-module-lexer/-/es-module-lexer-1.5.4.tgz#a8efec3a3da991e60efa6b633a7cad6ab8d26b78"
+  integrity sha512-MVNK56NiMrOwitFB7cqDwq0CQutbw+0BvLshJSse0MUNU+y1FC3bUS/AQg7oUng+/wKrrki7JfmwtVHkVfPLlw==
 
 es-object-atoms@^1.0.0:
   version "1.0.0"
@@ -7202,10 +7202,10 @@ jira-dev-tool@^1.6.13:
     react-query "^2.26.3"
     react-query-devtools "^2.6.3"
 
-jira-dev-tool@^2.0.7:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/jira-dev-tool/-/jira-dev-tool-2.0.7.tgz#1f93ba38fbe273fefe91b1805944517e07dea0a3"
-  integrity sha512-xf052dkGaksSRAev9vFBHNcyYRb7hT6Ew10jjkWIAdaDvUoTnOsoLY2XXDZoc7Bjoc3sq1II6GdwSPL546aWdg==
+jira-dev-tool@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/jira-dev-tool/-/jira-dev-tool-2.0.6.tgz#f20e687f3b101ed2ba2e9bafef125ed952d91859"
+  integrity sha512-fpsT0yWYbTgrRAHIRHSg0I7yUBkIbTo39pFyAoQj6cXtpSlIFvI/3XvUCFdW+NeQUC1yD6MHBqeTLRRNlEqlJA==
   dependencies:
     antd "^4.9.1"
     jira-dev-tool "^1.6.13"
@@ -9788,7 +9788,7 @@ react-query@^2.26.3:
   dependencies:
     "@babel/runtime" "^7.5.5"
 
-react-query@^3.5.10:
+react-query@^3.39.3, react-query@^3.5.10:
   version "3.39.3"
   resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.39.3.tgz#4cea7127c6c26bdea2de5fb63e51044330b03f35"
   integrity sha512-nLfLz7GiohKTJDuT4us4X3h/8unOh+00MLb2yJoGTPjxKs2bc1iDhkNx2bd5MKklXnOD3NrVZ+J2UXujA5In4g==
