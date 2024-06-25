@@ -24,7 +24,7 @@ export const LoginScreen = () => {
       </div>
       <div>
         <label htmlFor="password">密码</label>
-        <input type="password" id={"password"} />
+        <input type="password" id={"password"} autoComplete={"false"} />
       </div>
       <button type={"submit"}>登陆</button>
     </form>
