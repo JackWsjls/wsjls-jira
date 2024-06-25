@@ -69,16 +69,16 @@ husky - commit-msg script failed (code 1)
 Common types according to commitlint-config-conventional (based on the Angular convention) can be:
 
 build
-chore
+chore 日常事务
 ci
-docs
+docs 文档
 feat
 fix
 perf
-refactor
-revert
-style
-test
+refactor 重构
+revert 恢复
+style 样式
+test 测试
 ```
 
 标准格式
