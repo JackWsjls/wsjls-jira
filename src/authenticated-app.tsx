@@ -7,8 +7,10 @@ import { ReactComponent as SoftwareLogo } from "assets/software-logo.svg";
 import { Button, Dropdown, MenuProps, Space } from "antd";
 
 export const AuthenticatedApp = () => {
+  // const value:any = undefined
   return (
     <Container>
+      {/* {value.notExist} */}
       <PageHeader />
       <Main>
         <ProjectListScreen />
