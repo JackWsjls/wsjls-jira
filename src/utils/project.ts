@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useAsync } from "./use-async";
 import { Project } from "screens/project-list/list";
-import { clearObject } from "libs/utils";
+import { clearObject } from "utils";
 import { useHttp } from "utils/http";
 
 export const useProjects = (param?: Partial<Project>) => {

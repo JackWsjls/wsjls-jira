@@ -2,7 +2,7 @@ import { User } from "screens/project-list/search-panel";
 import { useHttp } from "./http";
 import { useAsync } from "./use-async";
 import { useEffect } from "react";
-import { clearObject } from "libs/utils";
+import { clearObject } from "utils";
 
 export const useUsers = (param?: Partial<User>) => {
   const client = useHttp();

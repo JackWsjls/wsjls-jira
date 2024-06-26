@@ -174,3 +174,7 @@ Create React App Configuration Override, an easy and comprehensible configuratio
 ### next
 
 yarn add @emotion/react @emotion/styled
+
+[react-helmet](https://github.com/nfl/react-helmet)
+yarn add react-helmet
+yarn add -D @types/react-helmet
