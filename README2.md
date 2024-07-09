@@ -184,3 +184,6 @@ yarn add -D @types/react-helmet
 yarn add react-router
 yarn add react-router-dom
 yarn add history
+
+why-did-you-render
+yarn add --dev @welldone-software/why-did-you-render
