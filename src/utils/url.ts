@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
+import { URLSearchParamsInit, useSearchParams } from "react-router-dom";
 
 export const useUrlQueryParam = <K extends string>(keys: K[]) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -15,6 +15,14 @@ export const useUrlQueryParam = <K extends string>(keys: K[]) => {
       [searchParams, keys], // eslint-disable-line
     ), // eslint-disable-line
     // keys 是一个state，放在依赖列表里就不会有问题
-    setSearchParams,
+    // setSearchParams,
+    (params: Partial<{ [key in K]: unknown }>) => {
+      // iterator
+      const o = {
+        ...Object.fromEntries(searchParams),
+        ...params,
+      } as URLSearchParamsInit;
+      return setSearchParams(o);
+    },
   ] as const;
 };
