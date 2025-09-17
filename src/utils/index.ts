@@ -64,7 +64,7 @@ export const useDocumentTitle = (
 export const resetRoute = () => (window.location.href = window.location.origin);
 
 /**
- * 返回组件挂载状态，没挂在或者卸载-返回 false，否则返回 true
+ * 返回组件挂载状态，没挂载或者卸载-返回 false，否则返回 true
  */
 export const useMountedRef = () => {
   const mountedRef = useRef(false);
@@ -75,4 +75,18 @@ export const useMountedRef = () => {
     };
   });
   return mountedRef;
+};
+
+export const subset = <
+  O extends { [key in string]: unknown },
+  K extends keyof O,
+>(
+  obj: O,
+  keys: K[],
+) => {
+  const filteredEntries = Object.entries(obj).filter(([key]) => {
+    // key:string
+    return keys.includes(key as K);
+  });
+  return Object.fromEntries(filteredEntries) as Pick<O, K>;
 };
