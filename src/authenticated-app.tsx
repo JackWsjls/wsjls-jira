@@ -15,21 +15,20 @@ import { ProjectPopover } from "components/project-popover";
 
 export const AuthenticatedApp = () => {
   // const value:any = undefined
-  const [projectModalOpen, setProjectModalOpen] = useState(false);
+  // const [projectModalOpen, setProjectModalOpen] = useState(false);
   return (
     <Container>
       {/* {value.notExist} */}
 
-      <PageHeader
-        projectButton={
-          <ButtonNoPadding
-            onClick={() => setProjectModalOpen(true)}
-            type={"link"}
-          >
-            创建项目
-          </ButtonNoPadding>
-        }
-      />
+      {/* projectButton={
+        <ButtonNoPadding
+          onClick={() => setProjectModalOpen(true)}
+          type={"link"}
+        >
+          创建项目
+        </ButtonNoPadding>
+      } */}
+      <PageHeader />
       {/* 默认 */}
       {/* <PageHeader setProjectModalOpen={setProjectModalOpen} /> */}
 
@@ -40,7 +39,8 @@ export const AuthenticatedApp = () => {
             <Route
               path={"/projects"}
               element={
-                <ProjectListScreen setProjectModalOpen={setProjectModalOpen} />
+                <ProjectListScreen />
+                // setProjectModalOpen={setProjectModalOpen}
               }
             ></Route>
             <Route
@@ -53,19 +53,17 @@ export const AuthenticatedApp = () => {
             />
           </Routes>
         </Router>
-        <ProjectModal
-          projectModalOpen={projectModalOpen}
-          onClose={() => setProjectModalOpen(false)}
-        />
       </Main>
+      <ProjectModal />
     </Container>
   );
 };
 
-const PageHeader = (props: {
-  projectButton: JSX.Element;
-  // setProjectModalOpen: (isOpen: boolean) => void;
-}) => {
+// props: {
+//   projectButton: JSX.Element;
+//   // setProjectModalOpen: (isOpen: boolean) => void;
+// }
+const PageHeader = () => {
   return (
     <Header between={true}>
       <HeaderLeft gap={true}>
@@ -76,7 +74,8 @@ const PageHeader = (props: {
         >
           <SoftwareLogo width={"18rem"} color={"rgb(38, 132, 255)"} />
         </ButtonNoPadding>
-        <ProjectPopover {...props} />
+        <ProjectPopover />
+        {/* <ProjectPopover {...props} /> */}
         {/* <ProjectPopover setProjectModalOpen={props.setProjectModalOpen} /> */}
         {/* <h2>项目</h2> */}
         <span>用户</span>

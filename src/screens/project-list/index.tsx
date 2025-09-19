@@ -10,11 +10,16 @@ import { useUsers } from "utils/user";
 // import { Test } from "test";
 // import { useUrlQueryParam } from "utils/url";
 import { useProjectsSearchParams } from "./util";
+import { useDispatch } from "react-redux";
+import { projectListActions } from "./project-list.slice";
 // import {Helmet} from "react-helmet"
 
-export const ProjectListScreen = (props: {
-  setProjectModalOpen: (isOpen: boolean) => void;
-}) => {
+// props: {
+//   setProjectModalOpen: (isOpen: boolean) => void;
+// }
+export const ProjectListScreen = () => {
+  const dispatch = useDispatch();
+
   useDocumentTitle("项目列表", false);
   // const [users, setUsers] = useState([]);
   // const [, setParam] = useState({
@@ -46,7 +51,7 @@ export const ProjectListScreen = (props: {
         <h1>项目列表</h1>
         <Button
           onClick={() => {
-            props.setProjectModalOpen(true);
+            dispatch(projectListActions.openProjectModal());
           }}
         >
           创建项目
@@ -57,8 +62,8 @@ export const ProjectListScreen = (props: {
       {error ? (
         <Typography.Text type={"danger"}>{error.message}</Typography.Text>
       ) : null}
+      {/* setProjectModalOpen={props.setProjectModalOpen} */}
       <List
-        setProjectModalOpen={props.setProjectModalOpen}
         refresh={retry}
         loading={isLoading}
         users={users || []}
