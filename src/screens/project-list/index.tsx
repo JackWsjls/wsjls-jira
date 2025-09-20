@@ -9,12 +9,12 @@ import { useProjects } from "utils/project";
 import { useUsers } from "utils/user";
 // import { Test } from "test";
 // import { useUrlQueryParam } from "utils/url";
-import { useProjectsSearchParams } from "./util";
+import { useProjectModal, useProjectsSearchParams } from "./util";
+import { ButtonNoPadding } from "components/lib";
 // import {Helmet} from "react-helmet"
 
-export const ProjectListScreen = (props: {
-  setProjectModalOpen: (isOpen: boolean) => void;
-}) => {
+export const ProjectListScreen = () => {
+  const { open } = useProjectModal();
   useDocumentTitle("项目列表", false);
   // const [users, setUsers] = useState([]);
   // const [, setParam] = useState({
@@ -44,13 +44,9 @@ export const ProjectListScreen = (props: {
       </Helmet> */}
       <Row justify="space-between">
         <h1>项目列表</h1>
-        <Button
-          onClick={() => {
-            props.setProjectModalOpen(true);
-          }}
-        >
+        <ButtonNoPadding onClick={open} type={"link"}>
           创建项目
-        </Button>
+        </ButtonNoPadding>
       </Row>
       <Button onClick={retry}>retry</Button>
       <SearchPanel users={users || []} param={param} setParam={setParam} />
@@ -58,7 +54,6 @@ export const ProjectListScreen = (props: {
         <Typography.Text type={"danger"}>{error.message}</Typography.Text>
       ) : null}
       <List
-        setProjectModalOpen={props.setProjectModalOpen}
         refresh={retry}
         loading={isLoading}
         users={users || []}
